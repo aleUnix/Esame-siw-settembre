@@ -1,0 +1,66 @@
+<html lang="en" xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
+<h:head>
+
+	<title>Login Utente</title>
+	<meta charset="utf-8"></meta>
+	<meta name="viewport" content="width=device-width, initial-scale=1"></meta>
+<link href="bootstrap.css" rel="stylesheet" type="text/css"></link>
+</h:head>
+<h:body>
+
+		<nav class="navbar navbar-inverse">
+			<div class="container-fluid">
+				<div class="navbar-header">
+					<a class="navbar-brand" href="#">Musical Store</a>
+				</div>
+				<div>
+					<ul class="nav navbar-nav">
+						<li><h:link value="Home" outcome="index.xhtml" /></li>
+						<li><h:link value="Catalogo" outcome="catalogoProdotti.xhtml" /></li>
+					</ul>
+
+					<ul class="nav navbar-nav navbar-right">
+
+						<li><h:link value="Login Cliente" outcome="loginCliente" />
+						</li>
+						<li><h:link value="Registrati"
+								outcome="registrazioneCliente.xhtml" /></li>
+
+					</ul>
+
+				</div>
+			</div>
+		</nav>
+
+
+
+
+	<h1>Accedi alla tua Area Cliente</h1>
+	<h:form>
+		<div>
+			Indirizzo E-mail:
+			<h:inputText value="#{controllerCliente.email}" required="true"
+				requiredMessage="Campo Obbligatorio" id="email">
+			</h:inputText>
+			<h:message for="email" styleClass="error" />
+		</div>
+		<div>
+			Password:
+			<h:inputSecret value="#{controllerCliente.password}" required="true"
+				requiredMessage="Campo Obbligatorio" id="password">
+			</h:inputSecret>
+			<h:message for="password" styleClass="error" />
+		</div>
+		<div>
+			Non sei ancora Registrato? 
+			<h:link value="Registrati qui." outcome="registrazioneCliente"></h:link> 
+		</div>
+		<div>
+			<h:commandButton id="Accedi" value="Accedi"
+				action="#{controllerCliente.autenticaCliente()}" />
+		</div>
+	</h:form>
+	<h:button value="Torna Indietro" outcome="index.xhtml" />
+</h:body>
+</html>

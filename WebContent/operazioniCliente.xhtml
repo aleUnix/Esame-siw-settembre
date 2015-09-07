@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
+<h:head>
+
+	<title>Operazioni cliente</title>
+	<meta charset="utf-8"></meta>
+	<meta name="viewport" content="width=device-width, initial-scale=1"></meta>
+<link href="bootstrap.css" rel="stylesheet" type="text/css"></link>
+</h:head>
+<h:body>
+	<div class="container-fluid">
+		<h1>Benvenuto nella tua Area Cliente</h1>
+		
+			<div><h:form>
+					<h:commandLink action="#{controllerOrdine.creaOrdine()}" value="Crea un Nuovo Ordine"></h:commandLink>
+
+				</h:form></div>
+				
+			<div><h:form>
+			<h:commandLink action="#{controllerOrdine.ordiniCliente()}" value="Consulta i Tuoi Ordini"></h:commandLink>
+			</h:form></div>
+			<h:form>
+				<h:button value="Log-out" outcome="index.xhtml" />
+			</h:form>
+
+	</div>
+</h:body>
+</html>
