@@ -3,47 +3,66 @@
 <h:head>
 
 	<title>Aggiungi Prodotto</title>
-<link href="bootstrap.css" rel="stylesheet" type="text/css"></link>
+	<link href="bootstrap.css" rel="stylesheet" type="text/css"></link>
 </h:head>
 <h:body>
+
+	<nav class="navbar navbar-inverse">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<a class="navbar-brand" href="#">Musical Store</a>
+			</div>
+			<div>
+				<ul class="nav navbar-nav">
+					<li><h:link value="Home" outcome="index.xhtml" /></li>
+					<li><h:link value="Catalogo" outcome="catalogoProdotti.xhtml" /></li>
+				</ul>
+
+				<ul class="nav navbar-nav navbar-right">
+
+					<li><h:link value="Logout" outcome="logout.xhtml" /></li>
+
+
+				</ul>
+
+			</div>
+		</div>
+	</nav>
+
+
 	<h1>Aggiungi Nuovo Prodotto</h1>
 	<h:form>
 		<div>
-			Nome: 
-			<h:inputText value="#{controllerProdotto.nome}"
-				required="true"
-				requiredMessage="Campo Obbligatorio"
-				id="nome">
+			Nome:
+			<h:inputText value="#{controllerProdotto.nome}" required="true"
+				requiredMessage="Campo Obbligatorio" id="nome">
 			</h:inputText>
-			<h:message for="nome" styleClass="error"/>
+			<h:message for="nome" styleClass="error" />
 		</div>
 		<div>
-			Codice: 
-			<h:inputText value="#{controllerProdotto.codice}"
-				required="true"
-				requiredMessage="Campo Obbligatorio"
-				id="codice">
+			Codice:
+			<h:inputText value="#{controllerProdotto.codice}" required="true"
+				requiredMessage="Campo Obbligatorio" id="codice">
 			</h:inputText>
-			<h:message for="codice" styleClass="error"/>
+			<h:message for="codice" styleClass="error" />
 		</div>
 		<div>
-			Descrizione: 
-			<h:inputTextarea value="#{controllerProdotto.descrizione}"
-				rows="6"
+			Descrizione:
+			<h:inputTextarea value="#{controllerProdotto.descrizione}" rows="6"
 				id="descrizione">
 			</h:inputTextarea>
 		</div>
 		<div>
-			Prezzo: 
-			<h:inputText value="#{controllerProdotto.prezzo}"
-				required="true"
-				requiredMessage="Campo Obbligatorio"
-				id="prezzo">
+			Prezzo:
+			<h:inputText value="#{controllerProdotto.prezzo}" required="true"
+				requiredMessage="Campo Obbligatorio" id="prezzo">
 			</h:inputText>
-			<h:message for="prezzo" styleClass="error"/>
+			<h:message for="prezzo" styleClass="error" />
 		</div>
-		<div><h:commandButton id="submit" value="Invia" action="riepilogoProdotto"/></div>
+		<div>
+			<h:commandButton id="submit" value="Invia" action="riepilogoProdotto" />
+		</div>
 	</h:form>
-	<h:button value="Torna Indietro" outcome="operazioniAdmin"/>
+	<h:button value="Torna Indietro" outcome="operazioniAdmin" />
 </h:body>
 </html>

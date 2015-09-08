@@ -9,6 +9,31 @@
 	<link href="bootstrap.css" rel="stylesheet" type="text/css"></link>
 </h:head>
 <h:body>
+
+		<nav class="navbar navbar-inverse">
+			<div class="container-fluid">
+				<div class="navbar-header">
+					<a class="navbar-brand" href="#">Musical Store</a>
+				</div>
+				<div>
+					<ul class="nav navbar-nav">
+						<li><h:link value="Home" outcome="index.xhtml" /></li>
+						<li><h:link value="Catalogo" outcome="catalogoProdotti.xhtml" /></li>
+					</ul>
+
+					<ul class="nav navbar-nav navbar-right">
+
+						<li><h:link value="Logout" outcome="logout.xhtml" />
+						</li>
+
+
+					</ul>
+
+				</div>
+			</div>
+		</nav>
+
+
 	<div class="container-fluid">
 		<h1>Benvenuto Amministratore!</h1>
 
@@ -22,9 +47,7 @@
 					value="Tutti gli Ordini nel Sistema"></h:commandLink>
 			</h:form>
 		</div>
-		<h:form>
-				<h:button value="Log-out" outcome="index.xhtml" />
-			</h:form>
+
 	
 	</div>
 </h:body>

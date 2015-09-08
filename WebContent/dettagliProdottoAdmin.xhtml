@@ -7,17 +7,40 @@
 	<link href="bootstrap.css" rel="stylesheet" type="text/css"></link>
 </h:head>
 <h:body>
+
+		<nav class="navbar navbar-inverse">
+			<div class="container-fluid">
+				<div class="navbar-header">
+					<a class="navbar-brand" href="#">Musical Store</a>
+				</div>
+				<div>
+					<ul class="nav navbar-nav">
+						<li><h:link value="Home" outcome="index.xhtml" /></li>
+						<li><h:link value="Catalogo" outcome="catalogoProdotti.xhtml" /></li>
+					</ul>
+
+					<ul class="nav navbar-nav navbar-right">
+
+						<li><h:link value="Logout" outcome="logout.xhtml" /></li>
+
+					</ul>
+
+				</div>
+			</div>
+		</nav>
+
+
 	<h1>Dettagli Prodotto</h1>
-	<ul>
-		<li>Nome: <h:outputText value="${controllerProdotto.prodotto.nome}"></h:outputText></li>
-		<li>Codice: <h:outputText value="${controllerProdotto.prodotto.codice}"></h:outputText></li>
-		<li>Descrizione: <h:outputText
-				value="${controllerProdotto.prodotto.descrizione}"></h:outputText></li>
-		<li>Prezzo: <h:outputText value="${controllerProdotto.prodotto.prezzo}"></h:outputText></li>
-		<li>Quantit&#224; Disponibile: <h:outputText value="${controllerProdotto.prodotto.qtaMagazzino}"></h:outputText></li>
+	
+		<div>Nome: <h:outputText value="${controllerProdotto.prodotto.nome}"></h:outputText></div>
+		<div>Codice: <h:outputText value="${controllerProdotto.prodotto.codice}"></h:outputText></div>
+		<div>Descrizione: <h:outputText
+				value="${controllerProdotto.prodotto.descrizione}"></h:outputText></div>
+		<div>Prezzo: <h:outputText value="${controllerProdotto.prodotto.prezzo}"></h:outputText></div>
+		<div>Quantit&#224; Disponibile: <h:outputText value="${controllerProdotto.prodotto.qtaMagazzino}"></h:outputText></div>
 		<h:form>
 			<h:commandButton value="Incrementa quantit&#224;" action="incrementoQta"></h:commandButton>
 		</h:form>
-	</ul>
+	
 </h:body>
 </html>

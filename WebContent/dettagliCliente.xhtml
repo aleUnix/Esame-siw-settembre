@@ -5,22 +5,47 @@
 	<title>Cliente</title>
 	<meta charset="utf-8"></meta>
 	<link href="bootstrap.css" rel="stylesheet" type="text/css"></link>
-	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"></link>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-	
+	<script
+		src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<script
+		src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
 </h:head>
 <h:body>
+
+
+
+	<nav class="navbar navbar-inverse">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<a class="navbar-brand" href="#">Musical Store</a>
+			</div>
+			<div>
+				<ul class="nav navbar-nav">
+					<li><h:link value="Home" outcome="index.xhtml" /></li>
+					<li><h:link value="Catalogo" outcome="catalogoProdotti.xhtml" /></li>
+				</ul>
+
+				<ul class="nav navbar-nav navbar-right">
+
+					<li><h:link value="Logout" outcome="logout.xhtml" /></li>
+
+
+				</ul>
+
+			</div>
+		</div>
+	</nav>
+
+
 	<h1>Dettagli Cliente</h1>
-	<ul>
-		<li>Nome: <h:outputText value="${controllerCliente.cliente.nome}"></h:outputText></li>
-		<li>Cognome: <h:outputText
-				value="${controllerCliente.cliente.cognome}"></h:outputText></li>
-		<li>Email: <h:outputText
-				value="${controllerCliente.cliente.email}"></h:outputText></li>
-		<h:form>
-			<h:button value="Log-out" outcome="index.xhtml" />
-		</h:form>
-	</ul>
+	
+		<div>Nome: <h:outputText value="${controllerCliente.cliente.nome}"></h:outputText></div>
+		<div>Cognome: <h:outputText
+				value="${controllerCliente.cliente.cognome}"></h:outputText></div>
+		<div>Email: <h:outputText
+				value="${controllerCliente.cliente.email}"></h:outputText></div>
+
+	
 </h:body>
 </html>

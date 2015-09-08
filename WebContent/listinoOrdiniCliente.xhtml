@@ -9,9 +9,34 @@
 </h:head>
 <h:body>
 
+
+
+		<nav class="navbar navbar-inverse">
+			<div class="container-fluid">
+				<div class="navbar-header">
+					<a class="navbar-brand" href="#">Musical Store</a>
+				</div>
+				<div>
+					<ul class="nav navbar-nav">
+						<li><h:link value="Home" outcome="index.xhtml" /></li>
+						<li><h:link value="Catalogo" outcome="catalogoProdotti.xhtml" /></li>
+					</ul>
+
+					<ul class="nav navbar-nav navbar-right">
+
+						<li><h:link value="Logout" outcome="logout.xhtml" />
+						</li>
+
+
+					</ul>
+
+				</div>
+			</div>
+		</nav>
+
 	<h1>I Tuoi Ordini</h1>
 
-	<h:dataTable value="#{controllerOrdine.ordini}" var="ord"
+	<h:dataTable value="#{controllerOrdine.tuttiOrdini}" var="ord"
 		styleClass="order-table" headerClass="order-table-header"
 		rowClasses="order-table-odd-row,order-table-even-row">
 		<h:column>
