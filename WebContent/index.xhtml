@@ -7,44 +7,46 @@
 
 	<link href="bootstrap.css" rel="stylesheet" type="text/css"></link>
 
-    
+
 </h:head>
+
+
+<nav class="navbar navbar-inverse">
+	<div class="container-fluid">
+		<div class="navbar-header">
+			<a class="navbar-brand" href="#">Musical Store</a>
+		</div>
+		<div>
+			<ul class="nav navbar-nav">
+				<li><h:link value="Home" outcome="index.xhtml" /></li>
+				<li><h:link value="Catalogo" outcome="catalogoProdotti.xhtml" /></li>
+			</ul>
+
+			<ul class="nav navbar-nav navbar-right">
+				<li><h:link value="Login Amministratore"
+						outcome="operazioniAdmin.xhtml" /></li>
+				<li><h:link value="Login Cliente" outcome="loginCliente" /></li>
+				<li><h:link value="Registrati"
+						outcome="registrazioneCliente.xhtml" /></li>
+
+			</ul>
+
+		</div>
+	</div>
+</nav>
+
 <h:body>
 	<div class="container-fluid">
 
 
-		<nav class="navbar navbar-inverse">
-			<div class="container-fluid">
-				<div class="navbar-header">
-					<a class="navbar-brand" href="#">Musical Store</a>
-				</div>
-				<div>
-					<ul class="nav navbar-nav">
-						<li><h:link value="Home" outcome="index.xhtml" /></li>
-						<li><h:link value="Catalogo" outcome="catalogoProdotti.xhtml" /></li>
-					</ul>
 
-					<ul class="nav navbar-nav navbar-right">
-						<li><h:link value="Login Amministratore"
-								outcome="operazioniAdmin.xhtml" /></li>
-						<li><h:link value="Login Cliente" outcome="loginCliente" />
-						</li>
-						<li><h:link value="Registrati"
-								outcome="registrazioneCliente.xhtml" /></li>
 
-					</ul>
+		<h1>Welcome to Musical Store, il tuo negozio di musica di fiducia</h1>
 
-				</div>
-			</div>
-		</nav>
+		<div>Basta una serie di note. Il resto &#xE9; improvvisazione.</div>
 
 
 
-		<div><h:link value="Login Cliente" outcome="loginCliente" /></div>
-	<div><h:link value="Login Amministratore" outcome="operazioniAdmin.xhtml" /></div>
-	<div><h:form>
-	<h:commandLink action="#{controllerProdotto.listaProdotti()}" value="Catalogo Prodotti"></h:commandLink>
-	</h:form></div>
 
 	</div>
 </h:body>
