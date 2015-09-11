@@ -20,7 +20,7 @@ public class FacadeCliente {
 		return cliente;
 	}
 	
-	public boolean autenticaAutente(String email, String password){
+	public boolean autenticaUtente(String email, String password){
 		Cliente cliente =  this.em.find(Cliente.class, email);
 		return cliente.verificaCredenziali(password);
 	}
