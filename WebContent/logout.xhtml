@@ -7,7 +7,7 @@
 
 	<link href="bootstrap.css" rel="stylesheet" type="text/css"></link>
 
-    
+
 </h:head>
 <h:body>
 	<div class="container-fluid">
@@ -25,12 +25,8 @@
 					</ul>
 
 					<ul class="nav navbar-nav navbar-right">
-						<li><h:link value="Login Amministratore"
-								outcome="loginAdmin.xhtml" /></li>
-						<li><h:link value="Login Cliente" outcome="loginCliente" />
-						</li>
-						<li><h:link value="Registrati"
-								outcome="registrazioneCliente.xhtml" /></li>
+						<li><h:link value="Logout" outcome="logout.xhtml" /></li>
+
 
 					</ul>
 
@@ -39,15 +35,28 @@
 		</nav>
 
 
-	<h1>Navigazione terminata con successo!</h1>
+		<h1>Conferma uscita dal sistema</h1>
 
+		<div>tutte le operazioni non confermate andranno perdute,
+			procedere?</div>
+
+
+	<div>   </div>
 	
-	
-	<div>
-		<h:button value="Torna alla Home page" outcome="index.xhtml"></h:button>
+		<div>
+			<h:form>
+				<h:commandButton action="#{controllerCliente.logout()}"
+					value="continua"></h:commandButton>
+			</h:form>
+		
+
+		
+			<h:button value="annulla" outcome="operazioniCliente.xhtml" />
+		</div>
+		
 	</div>
 
 
-	</div>
+
 </h:body>
 </html>

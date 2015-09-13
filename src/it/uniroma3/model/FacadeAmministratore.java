@@ -3,6 +3,7 @@ package it.uniroma3.model;
 import java.util.GregorianCalendar;
 
 import javax.ejb.Stateless;
+import javax.faces.context.FacesContext;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
@@ -28,6 +29,10 @@ public class FacadeAmministratore {
 	
 	public Amministratore cercaAmministratore(String matricola){
 		return this.em.find(Amministratore.class, matricola);
+	}
+	
+	public void logout() {
+		FacesContext.getCurrentInstance().getExternalContext().invalidateSession();
 	}
 
 }

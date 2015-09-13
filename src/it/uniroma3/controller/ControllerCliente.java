@@ -59,6 +59,11 @@ public class ControllerCliente {
 		return new Indirizzo(via, citta, regione, codicePostale, stato);
 	}
 	
+	public String logout(){
+		this.facadeCliente.logout();
+		return "/index.xhtml?faces-redirect=true";
+	}
+	
 	/* Getters and Setters */
 
 	public Long getId() {

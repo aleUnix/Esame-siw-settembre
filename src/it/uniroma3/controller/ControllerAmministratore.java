@@ -3,7 +3,6 @@ package it.uniroma3.controller;
 import java.util.GregorianCalendar;
 
 import it.uniroma3.model.Amministratore;
-
 import it.uniroma3.model.FacadeAmministratore;
 
 import javax.ejb.EJB;
@@ -47,6 +46,15 @@ public class ControllerAmministratore {
 		}
 		return "failure";
 	}
+	
+	public String logout(){
+		this.facadeAmministratore.logout();
+		return "/index.xhtml?faces-redirect=true";
+	}
+	
+
+
+	
 
 	/*getter e setter */
 	

@@ -51,6 +51,7 @@
 			<to-view-id>/faces/listinoOrdiniCliente.xhtml</to-view-id>
 		</navigation-case>
 	</navigation-rule>
+
 	<navigation-rule>
 		<from-view-id>/listinoOrdiniCliente.xhtml</from-view-id>
 		<navigation-case>

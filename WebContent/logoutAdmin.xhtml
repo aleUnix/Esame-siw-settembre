@@ -3,12 +3,15 @@
 	xmlns:f="http://java.sun.com/jsf/core">
 <h:head>
 
-	<title>Operazioni Amministratore</title>
-	<meta charset="utf-8"></meta>
-	<meta name="viewport" content="width=device-width, initial-scale=1"></meta>
+	<title>Logout</title>
+
 	<link href="bootstrap.css" rel="stylesheet" type="text/css"></link>
+
+
 </h:head>
 <h:body>
+	<div class="container-fluid">
+
 
 		<nav class="navbar navbar-inverse">
 			<div class="container-fluid">
@@ -22,9 +25,7 @@
 					</ul>
 
 					<ul class="nav navbar-nav navbar-right">
-
-						<li><h:link value="Logout" outcome="logoutAdmin.xhtml" />
-						</li>
+						<li><h:link value="Logout" outcome="logoutAdmin.xhtml" /></li>
 
 
 					</ul>
@@ -34,21 +35,28 @@
 		</nav>
 
 
-	<div class="container-fluid">
-		<h1>Benvenuto Amministratore!</h1>
+		<h1>Conferma uscita dal sistema</h1>
 
-			<div><h:link value="Aggiungi Prodotto" outcome="nuovoProdotto" /></div>
-			<div><h:form>
-					<h:commandLink action="#{controllerProdotto.listaProdotti()}" value="Catalogo Prodotti"></h:commandLink>
-				</h:form></div>
+		<div>tutte le operazioni non confermate andranno perdute,
+			procedere?</div>
+
+
+	<div>   </div>
+	
 		<div>
 			<h:form>
-				<h:commandLink action="#{controllerOrdine.listaTuttiOrdini()}"
-					value="Tutti gli Ordini nel Sistema"></h:commandLink>
+				<h:commandButton action="#{controllerAmministratore.logout()}"
+					value="continua"></h:commandButton>
 			</h:form>
-		</div>
+		
 
-	
+		
+			<h:button value="annulla" outcome="operazioniAdmin.xhtml" />
+		</div>
+		
 	</div>
+
+
+
 </h:body>
 </html>
