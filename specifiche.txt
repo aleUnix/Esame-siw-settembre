@@ -1,0 +1,49 @@
+# Esame-siw-settembre
+Progetto Avanzato Siw Settembre 2015 E-commerce, Alessio Quattrocchi 461649
+
+Progetto sviluppato con:
+- Framework JSF
+- Bootstrap
+- Cura dell'Interfaccia Utente
+
+
+Descrizione Testuale dei casi d'uso:
+
+UC1: consulta listino
+l'utente non autenticato, dalla pagina "index.xhtml", può consultare il catalogo dei prodotti, tramite un bottone posto sulla navbar in alto che reindirizza sulla pagina "catalogoProdotti.xhtml", da questa pagina, si può selezionare uno specifico prodotto, 
+di cui vengono mostrati i dettagli, su una pagina "dettagliProdottoOspite.xhtml", in questa pagina, non essendo autenticati, non si può ordinare il prodotto.
+
+UC2: effettua un ordine
+prerequisiti del caso d'uso: essere autenticati (dalla home l'utente clicca sul pulsante in alto sulla navbar, per il login cliente (la pagina "loginCliente.xhtml"), dove si può autenticare o registrare.)
+Una volta autenticati correttamente, si accede all'area del cliente, dove si può creare un ordine, viene mostrato il catalogo dei prodotti, scegliendo un prodotto, si potrà  visualizzare i dettagli scegliere la quantità da ordinare, la scelta effettuata viene inserita nella riga dell'ordine, 
+successivamente si può annullare l'ordine (estensione del caso d'uso) o confermarlo.
+Se si effettua un logout prima di confermare l'ordine, i dati della sessione non confermati, non vengono aggiornati nel db. Il logout agisce sulla sessione http invalidandola (UC7).
+
+UC3: consulta i propri ordini
+
+Un Cliente autenticato può selezionare dalla sua Area Cliente l'opzione Consulta i Tuoi Ordini, che mostra una tabella di tutti gli Ordini effettuati dal Cliente.
+
+
+UC4: inserimento prodotti nel catalogo
+
+dalla pagina di home, l'amministratore si può autenticare tramite apposito link (UC8).
+l'amministratore sceglie di aggiungere un nuovo prodotto al catalogo, specificandone i dettagli, premendo il bottone "invia" il sistema registra correttamente il prodotto nel DataBase.
+L'amministratore può ripetere questa operazione per aggiungere altri prodotti.
+
+UC5  &  UC6: recupera indirizzo cliente
+
+l'amministratore dalla pagina "operazioniAdmin.xhtml" può decidere di consultare tutti gli ordini presenti nel sistema. 
+Cliccando su un ordine mostrato, si visualizzano i dettagli di quel determinato ordine, l'amministratore da qui può scegliere di visualizzare i dettagli del cliente, oppure evadere l'ordine (UC6) (questa operazine decrementa la quantità in magazzino e riconduce alla pagina di evasione avvenuta).
+nb: è stata considerata la data di evasione uguale a quella di spedizione.
+
+
+UC7 Logout:
+
+a. logout cliente: in qualsiasi pagina che può visualizzare un cliente autenticato è possibile effettuare il logout tramite apposito bottone posto nella navbar, questo bottone reindirizza alla pagina logout.xhtml che chiede di confermare l'operazione o annullarla(tornando indietro alle op del cliente), il logout invalida la sessione http.
+b. logout amministratore: in qualsiasi pagina che può visualizzare un amministratore autenticato, è possibile effettuare il logout tramite apposito bottone nella navbar, questo reindirizza alla pagina logoutAdmin.xhtml che chiede di confermare l'operazione o annullarla(tornando indietro alle op del cliente), il logout invalida la sessione http.
+
+
+UC8 Login Amministratore:
+per effettuare questo uc, sono stati introdotti nel modello le classi amministratore con relativa facade e controller. La matricola è un codice univoco che identifica un amministratore, ogni amministratore conosce la propria matricola (non è assegnata dal sistema) e la propria password. Nella navbar della pagina iniziale (o in qualsiasi altra pagina 
+che si può navigare senza essere autenticati) l'amministratore può effettuare il login tramite apposito bottone login amministratore posto sulla navbar in alto. Si viene reindirizzati ad una pagina loginAdmin.xhtml dove viene chiesto di inserire matricola e password. (il sistema non prevede: la modifica della password, ne per l'amministartore ne per 
+l'utente e, non prevede la registrazione nel sistema di un amministratore, metre prevede la registrazione nel sistema di un nuovo utente)
